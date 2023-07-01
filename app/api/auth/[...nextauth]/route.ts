@@ -9,6 +9,7 @@ const authOptions: NextAuthOptions = {
     colorScheme: 'light',
   },
   adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     EmailProvider({
       server: {
