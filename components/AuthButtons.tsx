@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 export function SignInButton() {
   const { data: session, status } = useSession();
-  console.log(session, status);
 
   if (status === 'loading') {
     return <>...</>;
@@ -26,6 +25,7 @@ export function SignInButton() {
   }
 
   return <button onClick={() => signIn()}>Sign in</button>;
+  // return <Link href="/api/auth/signin/signin?csrf=true">Sign in</Link>;
 }
 
 export function SignOutButton() {

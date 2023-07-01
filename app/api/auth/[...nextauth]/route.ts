@@ -4,7 +4,7 @@ import EmailProvider from 'next-auth/providers/email';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { prisma } from '@/lib/prisma';
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   theme: {
     colorScheme: 'light',
   },
