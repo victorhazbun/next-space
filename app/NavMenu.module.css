@@ -1,14 +1,10 @@
 .nav {
   display: flex;
-  background-color: hwb(160 19% 36%);
+  background-color: #1d4ed8;
   color: #fff;
-  height: px;
+  height: 70px;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  padding: 1rem;
 }
 
 .links {
