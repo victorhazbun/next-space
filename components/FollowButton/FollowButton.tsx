@@ -7,6 +7,7 @@ interface Props {
   targetUserId: string;
 }
 
+// SERVER COMPONENT
 export default async function FollowButton({ targetUserId }: Props) {
   const session = await getServerSession(authOptions);
 

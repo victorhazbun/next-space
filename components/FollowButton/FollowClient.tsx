@@ -7,6 +7,7 @@ interface Props {
     isFollowing: boolean;
 }
 
+// CLIENT COMPONENT
 export default function FollowClient({ targetUserId, isFollowing }: Props) {
     const router = useRouter();
     const [isPending, startTransition] = useTransition();
