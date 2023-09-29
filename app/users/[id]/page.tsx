@@ -2,6 +2,8 @@ import FollowButton from '@/components/FollowButton/FollowButton';
 import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
 interface Props {
   params: {
@@ -17,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function UserProfile({ params }: Props) {
   const user = await prisma.user.findUnique({ where: { id: params.id } });
   const { name, bio, image, id } = user ?? {};
+  const session = await getServerSession();
 
   return (
     <div>
@@ -32,7 +35,7 @@ export default async function UserProfile({ params }: Props) {
       <h3>Bio</h3>
       <p>{bio}</p>
 
-      <FollowButton targetUserId={params.id} />
+      { session && <FollowButton targetUserId={params.id} /> }
     </div>
   );
 }
